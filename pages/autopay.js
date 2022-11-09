@@ -26,10 +26,10 @@ export default function Autopay(props){
 
     let buttons = []
     for(let key in authContacts["emailAddresses"]) {
-        buttons.push(<button className = " my-2 outline outline-blue-4 rounded-lg mx-auto bg-indigo-200 shadow-lg shadow-bg-indigo-200  " onClick={(x) => alert(5)}> <p>{authContacts["emailAddresses"][key]}</p></button>)
+        buttons.push(<button className = " my-2 outline outline-blue-4 rounded-lg mx-auto border w-11/12 md:w-96 " onClick={(x) => alert(5)}> <p>{authContacts["emailAddresses"][key]}</p></button>)
     }
     for(let key in authContacts["phoneNumbers"]) {
-        buttons.push(<button className = " my-2 outline outline-blue-4 p-2 rounded-lg mx-auto bg-indigo-200 shadow-lg shadow-bg-indigo-200 " onClick={(x) => alert(5)}> <p>{authContacts["phoneNumbers"][key]}</p></button>)
+        buttons.push(<button className = " my-2 outline outline-blue-4  rounded-lg mx-auto border  w-11/12 md:w-96 " onClick={(x) => alert(5)}> <p>{authContacts["phoneNumbers"][key]}</p></button>)
     }
 
 
@@ -46,7 +46,7 @@ export default function Autopay(props){
     return(
             <div className={myFont.className}>
             <Links links = {links} />
-            <div  className={"grid mt-5 content-center leading-10"}>
+            <div  className={"grid mt-2 content-center leading-10"}>
             {buttons}
             </div>
             </div>

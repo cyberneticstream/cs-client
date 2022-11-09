@@ -77,7 +77,7 @@ export default function CheckoutForm() {
   };
 
   return (
-    <div className={" w-96 m-16  body mx-auto content-center"}>
+    <div className={" w-96 m-14  body mx-auto content-center"}>
     <form id="payment-form" onSubmit={handleSubmit} >
       <PaymentElement id="payment-element" />
 
