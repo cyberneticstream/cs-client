@@ -12,7 +12,7 @@ export default function Links(props){
     return(
             <div className={myFont.className}>
             <div >
-            <div class=" md:text-7xl mt-56 text-center content-center text-5xl leading-tight md:leading-snug">
+            <div class=" md:text-7xl mt-56 text-center content-center text-5xl leading-tight md:leading-snug dark:text-white dark:bg-black">
                 {result}
             </div>
             </div>
