@@ -15,6 +15,14 @@ export default function Map(){
 
         router.prefetch("/").then( x => console.log("pf: " +x))
 
+        useEffect(() => {
+            if (typeof mapkit != "undefined") {
+
+                main()
+
+            }
+        })
+
     })
 
 
@@ -49,8 +57,6 @@ const main = async() => {
     workAnnotation.glyphText = "🛩️"; // Apple Symbol
 
     map.addItems([ workAnnotation]);
-
-
     console.log(mapkit)
 };
 
