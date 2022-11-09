@@ -30,13 +30,13 @@ const theme = createTheme({
 
 
 export default function Map(){
-
-
     const router = useRouter()
 
     useEffect(()=> {
         router.prefetch("/")
-    })
+
+    },[])
+
 
     return(
 
