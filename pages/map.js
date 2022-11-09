@@ -41,7 +41,7 @@ export default function Map(){
 
             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={()=> {main(); router.prefetch("/")}}></Script>
                  <div id="map-container" className={" map" }></div>
-             <button onClick={()=> router.push("/")} className={"bg-white md:text-7xl w-96 md:w-100 top-3  rounded-lg text-5xl btn opacity-75"}>{"<--"}</button>
+             <button onClick={()=> router.push("/")} className={"bg-white md:text-7xl w-96 md:w-100 top-3  rounded-lg text-5xl btn opacity-75 h-11md:h-14"}>{"<--"}</button>
             </div>
     )
 }
