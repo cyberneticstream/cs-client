@@ -2,6 +2,11 @@
 
 .map{
     width: 100%;
-    background-color: green;
+    background-color: white;
     height: 100vh;
+}
+
+.btn{
+    position: absolute;
+    top: 0;
 }

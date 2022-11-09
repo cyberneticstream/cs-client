@@ -3,15 +3,23 @@ import {useEffect} from "react";
 
 export default function Map(){
 
+    if(typeof mapkit != "undefined") {
+        main()
+    }
+
+
+
 
 
     return(
              <>
-             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map" data-initial-token="" onLoad={() => (main())}></Script>
+             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map" data-initial-token="" onReady={() => (main())}></Script>
 
 
              <div id="map-container" className={"map-container map"}></div>
              <h1>page</h1>
+
+             <button className={"btn"}>{"<--"}</button>
             </>
     )
 }
