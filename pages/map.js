@@ -11,20 +11,11 @@ export default function Map(){
 
 
     useEffect(() => {
-
-
+        if (typeof mapkit != "undefined") {
+            main()
+        }
         router.prefetch("/").then( x => console.log("pf: " +x))
-
-        useEffect(() => {
-            if (typeof mapkit != "undefined") {
-
-                main()
-
-            }
-        })
-
-    })
-
+    },[])
 
     return(
              <div className={myFont.className} >
