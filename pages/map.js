@@ -42,7 +42,7 @@ export default function Map(){
             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={()=> {main(); router.prefetch("/")}}></Script>
              <div id="map-container" className={" absolute map-container map z-0"}></div>
 
-                 <Button onClick={()=> router.push("/")} className ={"absolute top-56 z-50"} variant="contained">{"<"}</Button>
+                 <Button onClick={()=> router.push("/")} className ={"absolute top-56 z-50"} variant="contained" size={"small"}>{"<"}</Button>
 
 
             </div>
