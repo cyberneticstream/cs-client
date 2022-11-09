@@ -7,6 +7,7 @@ import {useRouter } from "next/router"
 export default function Map(){
 
     const router = useRouter()
+    router.prefetch("/")
 
     useEffect(() => {
         if(typeof mapkit != "undefined") {
