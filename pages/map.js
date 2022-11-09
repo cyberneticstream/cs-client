@@ -45,7 +45,8 @@ export default function Map(){
         const map = new mapkit.Map("map-container");
         map.mapType = mapkit.Map.MapTypes.Hybrid
         const geocoder = new mapkit.Geocoder()
-        geocoder.lookup("929 lee ave san leandro ca", (error, res) => {
+        geocoder.lookup("539 bosom way san leandro ca", (error, res) => {
+
             console.log(res)
             console.log(res.results[0].coordinate)
         })
@@ -57,6 +58,31 @@ export default function Map(){
                 );
 
         map.region = cupertino;
+
+
+        // Create the "Event" annotation, setting properties in the constructor.
+        const event = new mapkit.Coordinate(37.7831, -122.4041);
+        const eventAnnotation = new mapkit.MarkerAnnotation(event, {
+            color: "#4eabe9",
+            title: "Event",
+            glyphText: "\u{1F37F}" // Popcorn Emoji
+        });
+
+        // Create the "Work" annotation, setting properties after construction.
+        const work = new mapkit.Coordinate(37.729566, -122.152157);
+        const workAnnotation = new mapkit.MarkerAnnotation(work);
+        workAnnotation.color = "#969696";
+        workAnnotation.title = "Work";
+        workAnnotation.subtitle = "Apple Park";
+        workAnnotation.selected = "true";
+        workAnnotation.glyphText = "\u{F8FF}"; // Apple Symbol
+
+        // Add and show both annotations on the map
+        map.addItems([eventAnnotation, workAnnotation]);
+
+        console.log(3)
+        console.log(address)
+
 
         console.log(mapkit)
     };
