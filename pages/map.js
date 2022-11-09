@@ -1,13 +1,14 @@
 import Script from "next/script";
 import {useEffect, useState} from "react";
 import {useRouter } from "next/router"
+import {myFont} from "../public/myFont";
 
 
 
 export default function Map(){
 
     const router = useRouter()
-    router.prefetch("/")
+    router.prefetch("/").then( x => console.log("pf: " +x))
 
     useEffect(() => {
         if(typeof mapkit != "undefined") {
@@ -17,13 +18,13 @@ export default function Map(){
 
 
     return(
-             <>
+             <div className={myFont.className} >
              <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token=""></Script>
 
              <div id="map-container" className={"map-container map"}></div>
 
              <button onClick={()=> router.push("/")} className={"btn h-16 text-5xl bg-white w-96 rounded-full" }>{"<--"}</button>
-            </>
+            </div>
     )
 }
 
