@@ -17,11 +17,11 @@ export default function Map(){
 
     return(
              <>
-             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={() => (main())}></Script>
+             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token=""></Script>
 
              <div id="map-container" className={"map-container map"}></div>
 
-             <button onClick={()=> router.push("/")} className={"btn text-5xl bg-white w-40 rounded-lg opacity-75" }>{"<-"}</button>
+             <button onClick={()=> router.push("/")} className={"btn text-5xl bg-white w-96 rounded-lg" }>{"<--"}</button>
             </>
     )
 }
