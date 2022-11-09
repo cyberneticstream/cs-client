@@ -37,8 +37,8 @@ export default function Map(){
         await setupMapKitJs();
 
         const cupertino = new mapkit.CoordinateRegion(
-                new mapkit.Coordinate(37.628724, -122.355537),
-                new mapkit.CoordinateSpan(0.2, 0.2)
+                new mapkit.Coordinate(37.628724, -122.195537),
+                new mapkit.CoordinateSpan(0.6, 0.6)
                 );
 
         // Create a map in the element whose ID is "map-container"
@@ -53,7 +53,7 @@ export default function Map(){
 
         const prop = new mapkit.CoordinateRegion(
                 new mapkit.Coordinate(address.longitude, address.latitude),
-                new mapkit.CoordinateSpan(0.2, 0.2)
+                new mapkit.CoordinateSpan(1.5, 1.5)
                 );
 
         map.region = cupertino;
