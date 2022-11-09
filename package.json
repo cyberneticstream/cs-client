@@ -16,6 +16,7 @@
     "@mui/x-data-grid-generator": "^5.17.9",
     "@mui/x-data-grid-premium": "^5.17.9",
     "@next/font": "^13.0.1",
+    "@react-google-maps/api": "^2.16.0",
     "@stripe/react-stripe-js": "^1.14.2",
     "@stripe/stripe-js": "^1.42.1",
     "@types/node": "18.11.9",

@@ -1,7 +1,8 @@
 import Links from "../public/components/Links";
 import {myFont} from "../public/myFont.js";
 import { Loader } from "@googlemaps/js-api-loader"
-
+import {useMemo} from "react";
+import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 
 
 export async function getStaticProps(){
@@ -15,18 +16,14 @@ export async function getStaticProps(){
 
 export default function Page(props){
 
-    const loader = new Loader({
-        apiKey: "AIzaSyBMPVcEHYsdRn89Qle44zVgijJJBCud2v8",
-        version: "weekly",
-    });
+    const {isLoaded} = useLoadScript(
+            {googleMapsApiKey:"AIzaSyBMPVcEHYsdRn89Qle44zVgijJJBCud2v8"}
+    )
 
-    loader.load().then(() => {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8,
-            mapId: 'ff0468e089b212af'
-        });
-    });
+    if(!isLoaded) return <div>loading...</div>;
+
+
+
 
 
 
@@ -35,7 +32,7 @@ export default function Page(props){
     const unpaid =  props.unpaid[process.env.NEXT_PUBLIC_PROPERTY_ID].unpaid
 
 
-    let links = [{label: name, href: "/"}]
+    let links = [{label: <---, href: "/"}]
     let dynamicRoutes = []
 
     if (props.applicationsOpen) {
@@ -55,6 +52,9 @@ export default function Page(props){
     return(
             <div className={myFont.className}>
                 <div >
+
+                    <GoogleMap zoom ={10} center={{lat:44, lng:-80}} mapContainerClassName={"map"} />
+
                     <Links links ={links}/>
                 </div>
             </div>
