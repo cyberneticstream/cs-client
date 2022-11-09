@@ -32,7 +32,7 @@ export default function Page(props){
     const unpaid =  props.unpaid[process.env.NEXT_PUBLIC_PROPERTY_ID].unpaid
 
 
-    let links = [{label: <---, href: "/"}]
+    let links = [{label: "<---", href: "/"}]
     let dynamicRoutes = []
 
     if (props.applicationsOpen) {
