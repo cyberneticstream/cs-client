@@ -8,13 +8,16 @@ import {myFont} from "../public/myFont";
 export default function Map(){
 
     const router = useRouter()
-    router.prefetch("/").then( x => console.log("pf: " +x))
+
 
     useEffect(() => {
+
         if(typeof mapkit != "undefined") {
             main()
         }
-    }, [])
+        router.prefetch("/").then( x => console.log("pf: " +x))
+
+    })
 
 
     return(
