@@ -2,24 +2,44 @@ import Script from "next/script";
 import {useEffect, useState} from "react";
 import {useRouter } from "next/router"
 import {myFont} from "../public/myFont";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
+import {createTheme, ThemeProvider} from "@mui/material";
+
+const theme = createTheme({
+    palette: {
+        type: 'light',
+        primary: {
+            main: "#O00000",
+        },
+        secondary: {
+            main: "#000000",
+        },
+    },
+    typography: {
+        fontFamily: myFont,
+        h1:{
+            fontFamily: myFont
+        },
+    },
+});
 
 
 
 export default function Map(){
 
-    if (typeof mapkit != "undefined") {
-        main()
-    }
 
     const router = useRouter()
 
     return(
+
              <div className={myFont.className} >
-                 <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token=""></Script>
-
-             <div id="map-container" className={"map-container map"}></div>
-
-             <button onClick={()=> router.push("/")} className={" text-align-right absolute top-56 h-16 text-5xl bg-white w-20 rounded-full p-0" }>{"<"}</button>
+                 <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={()=> main()}></Script>
+             <div id="map-container" className={"map-container map z-0"}></div>
+             <Button onClick={()=> router.push("/")} className ={"absolute top-56 z-50"} variant="contained">Contained</Button>
             </div>
     )
 }
@@ -63,3 +83,5 @@ const setupMapKitJs = async() => {
         authorizationCallback: done => { done(jwt); }
     });
 };
+
+
