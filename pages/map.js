@@ -12,9 +12,7 @@ export default function Map(){
 
     useEffect(() => {
 
-        if(typeof mapkit != "undefined") {
-            main()
-        }
+
         router.prefetch("/").then( x => console.log("pf: " +x))
 
     })
@@ -22,7 +20,7 @@ export default function Map(){
 
     return(
              <div className={myFont.className} >
-             <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token=""></Script>
+                 <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={() => main()}></Script>
 
              <div id="map-container" className={"map-container map"}></div>
 
