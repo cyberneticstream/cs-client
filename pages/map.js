@@ -8,10 +8,15 @@ export default function Map(){
     const [address, setAddress] = useState({})
 
 
+    useEffect(() => {
 
-    if(typeof mapkit != "undefined") {
-        main()
-    }
+        if(typeof mapkit != "undefined") {
+            main()
+        }
+
+    }, [])
+
+
 
     const setupMapKitJs = async() => {
         if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
