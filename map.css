@@ -1,13 +1,5 @@
-
-
 .map{
     width: 100%;
     background-color: white;
     height: 100vh;
-}
-
-.btn{
-    position: absolute;
-    top: 14rem;
-    left: -5rem;
 }
