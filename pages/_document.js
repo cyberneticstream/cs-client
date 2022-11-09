@@ -5,7 +5,7 @@ export default function Document() {
             <Html>
                 <Head />
                 <title>{process.env.NEXT_PUBLIC_PROPERTY_ID}</title>
-                <body>
+                <body className={"dark:bg-black dark:text-white"}>
                     <Main />
                     <NextScript />
                 </body>
