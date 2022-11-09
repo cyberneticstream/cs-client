@@ -34,6 +34,10 @@ export default function Map(){
 
     const router = useRouter()
 
+    useEffect(()=> {
+        router.prefetch("/")
+    })
+
     return(
 
              <div className={myFont.className} >
