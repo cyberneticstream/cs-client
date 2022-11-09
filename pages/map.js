@@ -1,9 +1,12 @@
 import Script from "next/script";
 import {useEffect, useState} from "react";
+import {useRouter } from "next/router"
 
 
 
 export default function Map(){
+
+    const router = useRouter()
 
     useEffect(() => {
         if(typeof mapkit != "undefined") {
@@ -17,9 +20,8 @@ export default function Map(){
              <Script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js" crossorigin async data-callback="initMapKit" data-libraries="map,annotations,services" data-initial-token="" onReady={() => (main())}></Script>
 
              <div id="map-container" className={"map-container map"}></div>
-             <h1>page</h1>
 
-             <button className={"text-5xl"}>{"<-"}</button>
+             <button onClick={()=> router.push("/")} className={"text-5xl absolute top-96 bg-white w-20 rounded-lg opacity-75" }>{"<-"}</button>
             </>
     )
 }
