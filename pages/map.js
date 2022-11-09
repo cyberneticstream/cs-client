@@ -21,7 +21,7 @@ export default function Map(){
 
              <div id="map-container" className={"map-container map"}></div>
 
-             <button onClick={()=> router.push("/")} className={"text-5xl absolute top-96 bg-white w-20 rounded-lg opacity-75" }>{"<-"}</button>
+             <button onClick={()=> router.push("/")} className={"btn text-5xl bg-white w-40 rounded-lg opacity-75" }>{"<-"}</button>
             </>
     )
 }
