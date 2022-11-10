@@ -63,11 +63,12 @@ const main = async() => {
     const workAnnotation = new mapkit.MarkerAnnotation(work);
     workAnnotation.color = "#969696";
     workAnnotation.selected = "true";
-    workAnnotation.glyphText = "🛩️"; // Apple Symbol
+    workAnnotation.glyphText = "🛩️";// Apple Symbol
 
     map.addItems([ workAnnotation]);
     console.log(mapkit)
 };
+
 
 const setupMapKitJs = async() => {
     if (!window.mapkit || window.mapkit.loadedLibraries.length === 0) {
